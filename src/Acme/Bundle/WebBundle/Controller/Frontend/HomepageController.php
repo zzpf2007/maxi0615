@@ -29,6 +29,12 @@ class HomepageController extends Controller
     return $this->render('AcmeWebBundle:Frontend/Homepage:main.html.twig');
   }
 
+  public function splashAction()
+  {
+    return $this->render('z_layouts/Homepage/splash.html.twig');
+  }
+
+
   /**
    * Product front page.
    *

@@ -6,7 +6,7 @@
 # such as the security component and the dependency injection services
 imports:
     - { resource: parameters.yml }
-    - { resource: security.yml }
+    # - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@AcmeProductBundle/Resources/config/services.yml" }
 

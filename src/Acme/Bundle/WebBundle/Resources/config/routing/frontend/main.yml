@@ -2,7 +2,7 @@
 
 acme_homepage:
     path: /
-    defaults: { _controller: acme.controller.frontend.homepage:mainAction }
+    defaults: { _controller: acme.controller.frontend.homepage:splashAction }
 
 acme_front_product:
     resource: "@AcmeWebBundle/Resources/config/routing/product/main.yml"

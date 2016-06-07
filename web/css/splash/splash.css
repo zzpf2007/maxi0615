@@ -1,0 +1,24 @@
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+.section2 p { position: relative; left: -120%;}
+.section3 div { position: relative;opacity: 0}
+
+.splashvideo{
+position: fixed;
+right: 0;
+bottom: 0; 
+min-width: 100%;
+min-height: 100%; 
+width: auto; 
+height: auto; 
+z-index: -100; 
+/*background-size: cover;*/
+}
+
+#menu { margin: 0; padding: 0; position: fixed; right: 10px; top: 20px; list-style-type: none; z-index: 70;}
+#menu li { float: left; margin:  0 10px 0 0; font-size: 14px;}
+#menu a { float: left; padding: 10px 20px; color: #333; text-decoration: none; color: #fff;font-weight: bold;}
+#menu .active a { display: none}
+
+.login-wrapper{max-width:800px;margin:0 auto;text-align: center;display: inline-block}
+a.login-button{display:block;float:left;width:200px;font-size:30px;padding: 10px 5px;background-color: #03bfff;border-radius: 10px;color: #fff;text-decoration: none;transition:.2s all;}
+a.login-button:hover{background:#00abfb;box-shadow: 0 0 10px #03bfff;}

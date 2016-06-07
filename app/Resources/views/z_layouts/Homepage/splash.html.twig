@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>沈阳捷深</title>
+    <link rel="stylesheet" href="/css/splash/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="/css/splash/splash.css">
+    <script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/js/splash/jquery.fullPage.min.js"></script>
+    <script src="/js/splash/jquery.easing.min.js"></script>
+    <script>
+    $(function(){
+      $('#splashpage').fullpage({
+        
+        afterLoad: function(anchorLink, index){
+          if(index == 2){
+            $('.section2').find('p').delay(200).animate({
+              left: '0'
+            }, 1000, 'easeOutExpo');
+          }
+          if(index == 3){
+            $('.section3').find('div').delay(200).animate({
+              opacity: '1'
+            }, 1000, 'easeOutExpo');
+          }
+        },
+        onLeave: function(index, direction){
+          if(index == '2'){
+            $('.section2').find('p').delay(200).animate({
+              left: '-120%'
+            }, 1000, 'easeOutExpo');
+          }
+          if(index == '3'){
+            $('.section3').find('div').delay(200).animate({
+              opacity: '0'
+            }, 1000, 'easeOutExpo');
+          }
+        },
+        anchors: ['page1','page2','page3'],
+        menu: '#menu',
+        navigation: true
+      });
+    });
+    </script>
+  </head>
+
+<body>
+<ul id="menu">
+
+  <li data-menuanchor="page3">
+    <a href="#page3">
+      跳过简介>>
+    </a>
+  </li>
+</ul>
+
+<div id="splashpage" style="min-width:480px">
+  <div class="section section1" style="background: url('https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin/8.jpg?2')">
+
+    <h3>第一屏</h3>
+    <p>欢迎来到沈阳捷深</p>
+  </div>
+  <div class="section section2" style="background: url('https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin/11.jpg?2')">
+    <h3>第二屏</h3>
+    <p>瞧一瞧看一看停一停站一站</p>
+  </div>
+  <div class="section section3" style="background: url('https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin/18.jpg?2')">
+    <h3>第三屏</h3>
+
+    <div class="login-wrapper" id="login">
+      <a class="login-button" href="/product">零售商登录</a>
+      <a class="login-button" href="product" style="margin-left: 30px;">代理商登录</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

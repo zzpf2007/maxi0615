@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-  {% include 'AcmeWebBundle:Frontend/Common:head.html.twig' %}
+  <!-- old 'AcmeWebBundle:Frontend/Common:head.html.twig' changed to:-->
+  {% include 'z_layouts/Common/head.html.twig' %}
   <body>
     <div class="windowwrapper">
-      {% include 'AcmeWebBundle:Frontend/Common:header.html.twig' %}
+      {% include 'z_layouts/Common/header.html.twig' %}
 
       {% block beforepagecontent%}
       {% endblock %}
@@ -13,7 +14,7 @@
       {% endblock %}
       </main>
 
-        {% include 'AcmeWebBundle:Frontend/Common:footer.html.twig' %}
+        {% include 'z_layouts/Common/footer.html.twig' %}
     </div>
   </body>
 </html>
