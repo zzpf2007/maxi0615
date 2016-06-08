@@ -1,43 +1,76 @@
 {% extends 'z_layouts/layout_front.html.twig' %}
-{% block pagecontent%}
+
+{% block beforepagecontent%}
+  {% include 'z_layouts/Common/slideshow.html.twig' %}
+{% endblock %}
+
+{% block originalpagecontent%}
 
     controller: Acme\Bundle\ProductBundle\Controller
 
     view: app/Resources/views/product/index
 
-    <h1>Product list11</h1>
+<h1>Product list11</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for product in products %}
-            <tr>
-                <td><a href="{{ path('acme_frontend_product_show', { 'id': product.id }) }}">{{ product.id }}</a></td>
-                <td>{{ product.name }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('acme_frontend_product_show', { 'id': product.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('acme_frontend_product_edit', { 'id': product.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for product in products %}
+        <tr>
+            <td><a href="{{ path('acme_frontend_product_show', { 'id': product.id }) }}">{{ product.id }}</a></td>
+            <td>{{ product.name }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('acme_frontend_product_show', { 'id': product.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('acme_frontend_product_edit', { 'id': product.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
-    <ul>
+<ul>
+  <li>
+    <a href="{{ path('acme_frontend_product_new') }}">Create a new entry</a>
+  </li>
+</ul>
+{% endblock %}
+
+{% block pagecontent %}
+  <link rel="stylesheet" type="text/css" href="/css/front_index.css">
+  <div class="newsbar grad-ed">
+    <div class="newsbarinner">
+      ssss
+    </div>
+  </div>
+  <div class="pagewrapper">
+    <div style="padding:20px 0" class="hotproduct">
+      <h2>热销产品</h2>
+      <ul class="hotproductinner">
+        {% for product in products [:4] %}
         <li>
-            <a href="{{ path('acme_frontend_product_new') }}">Create a new entry</a>
+          <div class="hotprodabstr grad-e6">
+            <div style="width:143px;height:100%;float:left;">
+              <img src="http://www.hikvision.com/uploadfile/image/product/middle/20141106094336441.jpg" style="width: 100%;height: 137px">
+            </div>
+            <div style="padding:14px 6px; float: left;">
+              <a href="{{ path('acme_frontend_product_show', { 'id': product.id }) }}"><h2>{{ product.name }}</h2></a>
+            </div>
+          </div>
         </li>
-    </ul>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 {% endblock %}

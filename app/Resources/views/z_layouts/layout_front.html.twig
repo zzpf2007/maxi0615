@@ -9,9 +9,12 @@
       {% block beforepagecontent%}
       {% endblock %}
 
-      <main>
-      {% block pagecontent %}
-      {% endblock %}
+      <main style="min-height:600px">
+      <div class="rowwrapper">
+        {% block pagecontent %}
+        {% endblock %}
+      </div>
+      
       </main>
 
         {% include 'z_layouts/Common/footer.html.twig' %}
