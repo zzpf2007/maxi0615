@@ -1,0 +1,9 @@
+# This file is part of the Web package.
+
+acme_homepage:
+    path: /
+    defaults: { _controller: acme.controller.frontend.homepage:mainAction }
+
+acme_front_product:
+    resource: "@AcmeWebBundle/Resources/config/routing/product/main.yml"
+    prefix: /product

@@ -1,0 +1,8 @@
+acme_cpanel_product:
+    resource: @AcmeWebBundle/Resources/config/routing/cpanel/product.yml
+    prefix: /product
+
+acme_cpanel_serie:
+    resource: @AcmeWebBundle/Resources/config/routing/cpanel/serie.yml
+    prefix: /serie
+

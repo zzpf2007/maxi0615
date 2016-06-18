@@ -1,0 +1,108 @@
+html,body{height:100%;}
+.windowwrapper{
+  min-height: 100%;
+  height: auto !important;
+  position: relative;
+}
+header{
+  position:relative;
+}
+.pagewrapper{
+  width:1182px;
+  margin:0 auto;
+  padding-bottom: 360px;
+}
+.rowwrapper{
+  width:1180px;
+  height:auto;
+  margin:0 auto;
+  position: relative;
+}
+footer{
+  position: absolute;
+  left:0;
+  bottom:0;
+  width: 100%;
+  min-height:360px;
+  min-width: 1182px;
+  color: #fff;
+}
+footer h2{
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 17px;
+}
+footer .columns{
+  width:138px;
+  height: auto;
+  float: left;
+}
+footer .columns li{
+  min-height: 22px;
+  line-height: 22px;
+}
+
+nav.hmenu{
+  margin-top:1px;
+  height:35px;
+  line-height:35px;
+  background:#61605E;
+  color:#eee;
+  min-width: 1182px;
+}
+nav.hmenu ul li{
+  float:left;
+  width:auto;
+}
+
+nav.hmenu ul li a{
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 35px;
+  font-size: 14px;
+  color: #fff;
+  display: block;
+}
+nav.hmenu ul li a:hover,nav.hmenu ul li a:active,.hmenu ul li a.current{
+  text-decoration: underline;
+  background-color: #d2332f;
+}
+ .submenu{
+  border-radius:0 0 10px 10px;
+  overflow:hidden;
+  transition: all .3s ease-in .1s;
+  position: absolute;
+  min-width:200px;
+  color:#666;
+  height:0px;
+  z-index:120;
+}
+
+li:hover .submenu{
+  background-color: #fff;
+  height:170px;
+  z-index: 121;
+  transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  border-color:#d2332f;
+  -moz-box-shadow: 0px 5px 5px #333; 
+  box-shadow: 0px 5px 5px #333;
+}
+
+.submenu .submenuinner{
+  border-top:5px solid #d2332f;
+  min-height: 35px;
+  line-height:35px;
+  padding:0 10px 10px 10px;
+}
+.grad-e6{background: -o-linear-gradient(#fff, #e6e6e6);background: -moz-linear-gradient(#fff, #e6e6e6);background: linear-gradient(#fff, #e6e6e6);}
+.grad-ec{background: -o-linear-gradient(#fff, #ececec);background: -moz-linear-gradient(#fff, #ececec);background: linear-gradient(#fff, #ececec);}
+.grad-ed{background: -o-linear-gradient(#fff, #ededed);background: -moz-linear-gradient(#fff, #ededed);background: linear-gradient(#fff, #ededed);}
+.grad-ef{background: -o-linear-gradient(#fff, #efefef);background: -moz-linear-gradient(#fff, #efefef);background: linear-gradient(#fff, #efefef);}
+.texture-gray-3{
+  background-color: #888;
+  background-image: linear-gradient(45deg, #999 25%, transparent 25%, transparent 75%, #999 75%,#999),
+  linear-gradient(45deg, #999 25%, transparent 25%, transparent 75%, #999 75%, #999);
+  background-size: 3px 3px;
+  background-position: 0 0, 1.5px 1.5px;
+}

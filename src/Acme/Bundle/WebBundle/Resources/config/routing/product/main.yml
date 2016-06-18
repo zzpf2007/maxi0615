@@ -1,0 +1,25 @@
+acme_frontend_product_index:
+    path:     /
+    defaults: { _controller: "AcmeProductBundle:Product:index" }
+    methods:  GET
+
+acme_frontend_product_show:
+    path:     /{id}/show
+    defaults: { _controller: "AcmeProductBundle:Product:show" }
+    methods:  GET
+
+acme_frontend_product_new:
+    path:     /new
+    defaults: { _controller: "AcmeProductBundle:Product:new" }
+    methods:  [GET, POST]
+
+acme_frontend_product_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AcmeProductBundle:Product:edit" }
+    methods:  [GET, POST]
+
+acme_frontend_product_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AcmeProductBundle:Product:delete" }
+    methods:  DELETE
+    

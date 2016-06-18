@@ -1,0 +1,24 @@
+acme_cpanle_serie_index:
+    path:     /
+    defaults: { _controller: "AcmeProductBundle:Serie:index" }
+    methods:  GET
+
+acme_cpanle_serie_show:
+    path:     /{id}/show
+    defaults: { _controller: "AcmeProductBundle:Serie:show" }
+    methods:  GET
+
+acme_cpanle_serie_new:
+    path:     /new
+    defaults: { _controller: "AcmeProductBundle:Serie:new" }
+    methods:  [GET, POST]
+
+acme_cpanle_serie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AcmeProductBundle:Serie:edit" }
+    methods:  [GET, POST]
+
+acme_cpanle_serie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AcmeProductBundle:Serie:delete" }
+    methods:  DELETE

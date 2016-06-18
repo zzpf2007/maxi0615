@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  {% include 'AcmeWebBundle:Frontend/Common:head.html.twig' %}
+  <body>
+    <div class="windowwrapper">
+      {% include 'AcmeWebBundle:Frontend/Common:header.html.twig' %}
+
+      {% block beforepagecontent%}
+      {% endblock %}
+
+      <main>
+      {% block pagecontent %}
+      {% endblock %}
+      </main>
+
+        {% include 'AcmeWebBundle:Frontend/Common:footer.html.twig' %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cart list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Quantity</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cart in carts %}
+            <tr>
+                <td><a href="{{ path('cart_show', { 'id': cart.id }) }}">{{ cart.quantity }}</a></td>
+                <td>{{ cart.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('cart_show', { 'id': cart.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cart_edit', { 'id': cart.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cart_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

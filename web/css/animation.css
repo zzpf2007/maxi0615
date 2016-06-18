@@ -1,0 +1,16 @@
+/* animation 1 to show submenu*/
+@-webkit-keyframes showsubmenu{
+  0%{height:1px;}
+  100%{height:auto;}
+}
+
+@keyframes showsubmenu{
+  0%{height:1px;}
+  100%{height:auto;}
+}
+
+@-moz-keyframes showsubmenu{
+  0%{height:1px;}
+  100%{height:auto;}
+}
+/* end of animation 1 */
