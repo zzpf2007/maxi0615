@@ -12,9 +12,9 @@
     <field name="updated" column="updated" type="datetime" nullable="true" />
     
     <many-to-many field="tags" target-entity="Acme\Bundle\ProductBundle\Entity\Tag">
-            <cascade>
-                <cascade-persist />
-            </cascade>
+        <cascade>
+            <cascade-persist />
+        </cascade>
     </many-to-many>
   </entity>
 </doctrine-mapping>

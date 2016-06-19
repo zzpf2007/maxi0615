@@ -123,4 +123,4 @@ knp_paginator:
 # BeelabTag Configuration
 beelab_tag:
     tag_class: Acme\Bundle\ProductBundle\Entity\Tag
-    purge:     false
+    purge:     true
