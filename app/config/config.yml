@@ -120,3 +120,7 @@ knp_paginator:
     template:
         pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig
 
+# BeelabTag Configuration
+beelab_tag:
+    tag_class: Acme\Bundle\ProductBundle\Entity\Tag
+    purge:     false

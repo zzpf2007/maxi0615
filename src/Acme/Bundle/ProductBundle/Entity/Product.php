@@ -3,9 +3,12 @@
 namespace Acme\Bundle\ProductBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Acme\Bundle\ProductBundle\Entity\Serie;
+// use Acme\Bundle\ProductBundle\Entity\Serie;
+use Beelab\TagBundle\Tag\TagInterface;
+use Beelab\TagBundle\Tag\TaggableInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 
-class Product
+class Product implements TaggableInterface
 {
     /**
      * @var int
@@ -18,8 +21,24 @@ class Product
     private $name;
 
     /**
-    */
-    protected $serie; 
+     * @var Tag
+     */
+    protected $tags;
+
+    protected $tagsText;
+
+    /**
+     * @var DateTime
+     */
+    protected $updated;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -54,26 +73,63 @@ class Product
         return $this->name;
     }
 
-    /**
-     * Set serie
-     *
-     * @param \Acme\Bundle\ProductBundle\Entity\Serie $serie
-     * @return Product
-     */
-    public function setSerie(\Acme\Bundle\ProductBundle\Entity\Serie $serie = null)
-    {
-        $this->serie = $serie;
 
-        return $this;
+    /**
+     * {@inheritdoc}
+     */
+    public function addTag(TagInterface $tag)
+    {
+        $this->tags[] = $tag;
     }
 
     /**
-     * Get serie
-     *
-     * @return \Acme\Bundle\ProductBundle\Entity\Serie 
+     * {@inheritdoc}
      */
-    public function getSerie()
+    public function removeTag(TagInterface $tag)
     {
-        return $this->serie;
+        $this->tags->removeElement($tag);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hasTag(TagInterface $tag)
+    {
+        return $this->tags->contains($tag);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getTagNames()
+    {
+        return empty($this->tagsText) ? array() : array_map('trim', explode(',', $this->tagsText));
+    }
+
+    /**
+     * @param string
+     */
+    public function setTagsText($tagsText)
+    {
+        $this->tagsText = $tagsText;
+        $this->updated = new \DateTime();
+    }
+
+    /**
+     * @return string
+     */
+    public function getTagsText()
+    {
+        $this->tagsText = implode(', ', $this->tags->toArray());
+
+        return $this->tagsText;
     }
 }

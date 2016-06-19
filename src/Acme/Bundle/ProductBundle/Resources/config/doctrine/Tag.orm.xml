@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity 
-    repository-class="Acme\Bundle\ProductBundle\Repository\ProductRepository" 
-    name="Acme\Bundle\ProductBundle\Entity\Product"
-    table="product"
+    repository-class="Acme\Bundle\ProductBundle\Repository\TagRepository" 
+    name="Acme\Bundle\ProductBundle\Entity\Tag"
+    table="tags"
     >
     <id name="id" type="integer" column="id">
       <generator strategy="AUTO"/>
     </id>
     <field name="name" type="string" column="name" length="60"/>
-    <field name="updated" column="updated" type="datetime" nullable="true" />
-    
-    <many-to-many field="tags" target-entity="Acme\Bundle\ProductBundle\Entity\Tag">
-            <cascade>
-                <cascade-persist />
-            </cascade>
-    </many-to-many>
   </entity>
 </doctrine-mapping>

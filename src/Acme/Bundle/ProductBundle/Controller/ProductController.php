@@ -45,7 +45,7 @@ class ProductController extends Controller
             $em->persist($product);
             $em->flush();
 
-            return $this->redirectToRoute('product_show', array('id' => $product->getId()));
+            return $this->redirectToRoute('acme_frontend_product_show', array('id' => $product->getId()));
         }
 
         return $this->render('AcmeProductBundle::product/new.html.twig', array(
@@ -84,7 +84,7 @@ class ProductController extends Controller
             $em->persist($product);
             $em->flush();
 
-            return $this->redirectToRoute('product_edit', array('id' => $product->getId()));
+            return $this->redirectToRoute('acme_frontend_product_edit', array('id' => $product->getId()));
         }
 
         return $this->render('AcmeProductBundle::product/edit.html.twig', array(
@@ -109,7 +109,7 @@ class ProductController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('product_index');
+        return $this->redirectToRoute('acme_frontend_product_index');
     }
 
     /**
@@ -122,7 +122,7 @@ class ProductController extends Controller
     private function createDeleteForm(Product $product)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('product_delete', array('id' => $product->getId())))
+            ->setAction($this->generateUrl('acme_frontend_product_delete', array('id' => $product->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
